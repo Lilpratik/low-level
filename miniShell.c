@@ -30,7 +30,18 @@ int main() {
 	    token = strtok(NULL, " ");
 	}
 	args[i] = NULL;
+	// critical os concepts adding exit and cd -> change directory
+	if (strcmp(args[0], "exit") == 0) {
+	    break;
+	}
 
+	if (strcmp(args[0], "cd") == 0) {
+	    chdir(args[1]);
+	    continue;
+	}
+	
+	
+	
 	// fork process
 	pid_t pid = fork();
 
